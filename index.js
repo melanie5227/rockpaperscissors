@@ -41,4 +41,6 @@ function playGame(numrounds){
         }
         
     }
-    playGame(10)
+    playGame(5)
+    
+    
