@@ -23,15 +23,18 @@ function getHumanChoice(){
 function playRound(humanChoice, computerChoice){
     if(humanChoice === "rock" && computerChoice === "scissors" || humanChoice === "paper" && computerChoice === "rock" || humanChoice === "scissors" && computerChoice === "paper"){
         console.log("You win!")
+        humanScore++
     }else if(humanChoice===computerChoice){
         console.log("Tie!")
     }else{
         console.log("You lose!")
+        computerScore++
     }
-
+    
 }
 
 const humanSelection = getHumanChoice()
 const computerSelection = getComputerChoice()
+
 
 playRound(humanSelection, computerSelection)
