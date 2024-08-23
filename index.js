@@ -30,11 +30,21 @@ function playRound(humanChoice, computerChoice){
         console.log("You lose!")
         computerScore++
     }
-    
 }
+
 
 const humanSelection = getHumanChoice()
 const computerSelection = getComputerChoice()
 
 
+
 playRound(humanSelection, computerSelection)
+
+function playGame(numrounds){
+    for(let i=1; i<numrounds; i++){
+            getHumanChoice()
+            playRound()
+        }
+        
+    }
+    playGame(5)
