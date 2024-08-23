@@ -32,19 +32,13 @@ function playRound(humanChoice, computerChoice){
     }
 }
 
-
-const humanSelection = getHumanChoice()
-const computerSelection = getComputerChoice()
-
-
-
-playRound(humanSelection, computerSelection)
-
 function playGame(numrounds){
-    for(let i=1; i<numrounds; i++){
-            getHumanChoice()
-            playRound()
+    for(let i=1; i<=numrounds; i++){
+            const humanSelection = getHumanChoice()
+            const computerSelection =getComputerChoice()
+            playRound(humanSelection, computerSelection)
+            console.log(`Round ${i}: Human score: ${humanScore} Computer score: ${computerScore}`)
         }
         
     }
-    playGame(5)
+    playGame(10)
