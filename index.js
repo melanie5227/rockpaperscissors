@@ -2,9 +2,10 @@ let humanScore = 0
 let computerScore = 0
 
 function getComputerChoice(){
-    if (Math.random() > .66){
+    let randomValue = Math.random()
+    if (randomValue > .66){
         return "rock"
-    }else if(Math.random() > .33){
+    }else if(randomValue > .33){
         return "paper"
     }else {
         return "scissors"
@@ -14,6 +15,23 @@ function getComputerChoice(){
     
 function getHumanChoice(){
     let userInput = prompt("Rock, Paper, or Scissors?")
-    return userInput
+    return userInput.toLowerCase()
 }
-// console.log(getHumanChoice())
+// // console.log(getHumanChoice())
+
+
+function playRound(humanChoice, computerChoice){
+    if(humanChoice === "rock" && computerChoice === "scissors" || humanChoice === "paper" && computerChoice === "rock" || humanChoice === "scissors" && computerChoice === "paper"){
+        console.log("You win!")
+    }else if(humanChoice===computerChoice){
+        console.log("Tie!")
+    }else{
+        console.log("You lose!")
+    }
+
+}
+
+const humanSelection = getHumanChoice()
+const computerSelection = getComputerChoice()
+
+playRound(humanSelection, computerSelection)
